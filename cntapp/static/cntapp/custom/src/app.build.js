@@ -16,7 +16,7 @@
         'bootstrap_editable': '../../../../../libs/bower_components/x-editable/dist/bootstrap3-editable/js/bootstrap-editable',
         'bootstrap_table': '../../../../../libs/bower_components/bootstrap-table/src/bootstrap-table',
         'bootstrap_table_editable': '../../../../../libs/bower_components/bootstrap-table/src/extensions/editable/bootstrap-table-editable',
-        'text': '../../../../../libs/bower_components/requirejs-text/text',
+        'text': '../../../../../libs/bower_components/text/text',
         'dropzone': '../../../../../libs/bower_components/dropzone/dist/dropzone-amd-module',
         'i18n': '../../../../../libs/bower_components/i18next/i18next',
 
