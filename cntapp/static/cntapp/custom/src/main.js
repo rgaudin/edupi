@@ -11,7 +11,7 @@ require.config({
         'bootstrap_editable': '/static/x-editable/dist/bootstrap3-editable/js/bootstrap-editable',
         'bootstrap_table': '/static/bootstrap-table/src/bootstrap-table',
         'bootstrap_table_editable': '/static/bootstrap-table/src/extensions/editable/bootstrap-table-editable',
-        'text': '/static/requirejs-text/text',
+        'text': '/static/text/text',
         'dropzone': '/static/dropzone/dist/dropzone-amd-module',
         'i18n': '/static/i18next/i18next',
 

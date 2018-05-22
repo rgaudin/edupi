@@ -8,7 +8,7 @@ require.config({
         'underscore': '/static/underscore/underscore',
         'backbone': '/static/backbone/backbone',
         'bootstrap': '/static/bootstrap/dist/js/bootstrap',
-        'text': '/static/requirejs-text/text',
+        'text': '/static/text/text',
         'i18n': '/static/i18next/i18next',
 
         // shared modules
