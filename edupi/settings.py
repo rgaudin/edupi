@@ -13,6 +13,7 @@ import os
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+DATA_ROOT = os.path.dirname(BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -79,7 +80,7 @@ WSGI_APPLICATION = 'edupi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../database/db.sqlite3'),
+        'NAME': os.path.join(DATA_ROOT, 'database', 'db.sqlite3'),
     }
 }
 
@@ -104,7 +105,7 @@ STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "../static/")
+STATIC_ROOT = os.path.join(DATA_ROOT, "static")
 
 BOWER_COMPONENTS_ROOT = os.path.abspath(os.path.join(BASE_DIR, "libs"))
 
@@ -131,7 +132,7 @@ BOWER_INSTALLED_APPS = (
     'i18next#1.10.2',
 )
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "../media/")
+MEDIA_ROOT = os.path.join(DATA_ROOT, "media")
 
 MEDIA_URL = '/media/'
 
@@ -159,7 +160,7 @@ REST_FRAMEWORK_EXTENSIONS = {
 
 NGINX_LOG_DIR = '/var/log/nginx/'
 NGINX_MEDIA_ACCESS_LOG_PREFIX = 'edupi_media_access'
-STATS_DIR = os.path.join(BASE_DIR, '../stats/')
+STATS_DIR = os.path.join(DATA_ROOT, 'stats')
 
 LOGGING = {
     'version': 1,
