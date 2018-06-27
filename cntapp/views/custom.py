@@ -61,7 +61,7 @@ def sys_info(request):
     }
 
     # result in k-bytes
-    df_res = subprocess.check_output(['df', '/home/']).decode().split()[8:-1]
+    df_res = subprocess.check_output(['df', settings.MEDIA_ROOT]).decode().split()[8:-1]
     system_info["TotalSize"] = df_res[df_index['size']]
     system_info["Used"] = df_res[df_index['used']]
     system_info["Available"] = df_res[df_index['available']]
