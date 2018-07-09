@@ -7,3 +7,4 @@ Wand==0.4.4
 django-imagekit==3.2.6
 python3-memcached==1.51
 drf-extensions==0.2.7
+python-magic==0.4.15

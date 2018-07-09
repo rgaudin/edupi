@@ -50,15 +50,15 @@ class DocumentSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def create_pdf_thumbnail(validated_data):
-        file_name = None
+        thumbnail = None
         # use page[0] as thumbnail
         with Image(filename=validated_data['file'].temporary_file_path() + '[0]') as img:
-            file_name = tempfile.mktemp(suffix='.png')
-            img.save(filename=file_name)  # save to /tmp
-        if file_name is not None:
-            file_path = os.path.join('/tmp', file_name)
-            with open(file_name, 'rb') as f:
-                validated_data['thumbnail'] = SimpleUploadedFile(file_name, f.read())
+            thumbnail = tempfile.NamedTemporaryFile(suffix='.png')
+            img.save(filename=thumbnail.name)
+        if thumbnail is not None:
+            with thumbnail as f:
+                validated_data['thumbnail'] = SimpleUploadedFile(
+                    thumbnail.name, f.read())
 
     def create(self, validated_data):
         logger.debug('creating document ...')
