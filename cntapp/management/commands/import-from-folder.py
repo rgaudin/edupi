@@ -74,6 +74,10 @@ def check_file_names(fname):
     ''' exclude files based on their names '''
     if fname in ('.DS_Store',):
         return False
+    if fname.startswith('__'):
+        return False
+    if fname.startswith('.'):
+        return False
     return True
 
 
