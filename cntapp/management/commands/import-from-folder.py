@@ -69,7 +69,6 @@ def get_or_create_root_dir(name):
         root_directory = create_dir(name)
         return root_directory, True
 
-
 def check_file_names(fname):
     ''' exclude files based on their names '''
     if fname in ('.DS_Store',):
@@ -145,7 +144,7 @@ class Command(BaseCommand):
 
         root_levels = len(splitall(tree_root))
         for root, dirs, files in os.walk(tree_root):
-            for folder_name in dirs:
+            for folder_name in filter(check_file_names, dirs):
                 # full path to source folder
                 source_path = os.path.join(root, folder_name)
 
