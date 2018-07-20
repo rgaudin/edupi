@@ -96,3 +96,8 @@ body {
     from { transform: scale(1) rotate(0deg);}
     to { transform: scale(1) rotate(360deg);}
 }
+
+/* hide copyright text on footer as it confuses users with content copyright */
+footer.footer .text-muted { 
+	display: none;
+}
