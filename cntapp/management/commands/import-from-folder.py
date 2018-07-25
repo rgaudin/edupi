@@ -115,6 +115,12 @@ class Command(BaseCommand):
     help = 'Import documents into EduPi from a document tree'
 
     def add_arguments(self, parser):
+        parser.add_argument('--delete',
+            action='store_true',
+            dest='delete',
+            default=False,
+            help='Delete source files once sucessfuly imported')
+
         parser.add_argument("tree", help="The path of the tree root")
 
     def handle(self, *args, **options):
@@ -199,6 +205,9 @@ class Command(BaseCommand):
                 file_directory.documents.add(document)
                 # update counter
                 nb_added_documents += 1
+                # delete source file if requested
+                if options['delete']:
+                    os.unlink(source_path)
 
         self.stdout.write("Done. Added {} documents from {}"
                           .format(nb_added_documents, tree_root))
